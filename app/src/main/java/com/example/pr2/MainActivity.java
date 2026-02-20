@@ -1,6 +1,8 @@
 package com.example.pr2;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +15,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    }
+
+    public void onStepAge(View view){
+        EditText _name = findViewById(R.id.editTextTextMultiline);
+
+        setContentView(R.layout.step_2);
+    }
+
+    public void onStepSex(View view){
+        setContentView(R.layout.step_3);
+    }
+
+    public void onStepEmail(View view){
+        setContentView(R.layout.step_4);
     }
 }
